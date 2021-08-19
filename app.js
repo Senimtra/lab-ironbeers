@@ -25,4 +25,15 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+// #####################################
+// ## Iteration 3.1: The /beers route ##
+// #####################################
+
+app.get('/beers', (req, res) => {
+  punkAPI
+    .getBeers()
+    .then(beersFromApi => console.log('Beers from the database: ', beersFromApi))
+    .catch(error => console.log(error));
+})
+
 app.listen(3000, () => console.log('🏃‍ on port 3000'));
