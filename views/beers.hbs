@@ -1,0 +1,17 @@
+<!--
+#######################################
+## Iteration 3.2: The beers.hbs view ##
+####################################### -->
+
+<div class='row'>
+  {{#each beersFromApi}}
+    <div class='card' style='width: 18rem;'>
+      <img src='{{image_url}}' class='card-img-top' alt='{{name}}' />
+      <div class='card-body'>
+        <h5 class='card-title'>{{name}}</h5>
+        <p class='card-text'>{{tagline}}</p>
+        <p class='card-text'>{{description}}</p>
+      </div>
+    </div>
+  {{/each}}
+</div>

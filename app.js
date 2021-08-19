@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 app.get('/beers', (req, res) => {
   punkAPI
     .getBeers()
-    .then(beersFromApi => console.log('Beers from the database: ', beersFromApi))
+    .then(beersFromApi => res.render('beers', { beersFromApi }))
     .catch(error => console.log(error));
 })
 
