@@ -36,4 +36,15 @@ app.get('/beers', (req, res) => {
     .catch(error => console.log(error));
 })
 
+// ###########################################
+// ## Iteration 4.1: The /random-beer route ##
+// ###########################################
+
+app.get('/random-beer', (req, res) => {
+  punkAPI
+    .getRandom()
+    .then(randomBeerFromApi => res.send(randomBeerFromApi))
+    .catch(error => console.log(error));
+})
+
 app.listen(3000, () => console.log('🏃‍ on port 3000'));
