@@ -39,7 +39,18 @@ app.get('/beers', (req, res) => {
 app.get('/random-beer', (req, res) => {
   punkAPI
     .getRandom()
-    .then(randomBeerFromApi => res.render('random-beer', { randomBeerFromApi }))
+    .then(beerDetailsFromApi => res.render('random-beer', { beerDetailsFromApi }))
+    .catch(error => console.log(error));
+})
+
+// #######################################
+// ## Bonus: Iteration 6 - Beer details ##
+// #######################################
+
+app.get('/random-beer/:beerId', (req, res) => {
+  punkAPI
+    .getBeer(req.params.beerId)
+    .then(beerDetailsFromApi => res.render('random-beer', { beerDetailsFromApi }))
     .catch(error => console.log(error));
 })
 

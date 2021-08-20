@@ -5,6 +5,8 @@
 
 <div class='row'>
   {{#each beersFromApi}}
+  <a href="/random-beer/{{id}}">
     {{>beerpartial}}
   {{/each}}
+  </a>
 </div>
