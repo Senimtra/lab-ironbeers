@@ -3,10 +3,10 @@
 ## Iteration 3.2: The beers.hbs view ##
 ####################################### -->
 
-<div class='row'>
+<div class='row row-cols-3'>
   {{#each beersFromApi}}
-  <a href="/random-beer/{{id}}">
+  <a href='/random-beer/{{id}}'>
     {{>beerpartial}}
-  {{/each}}
   </a>
+  {{/each}}
 </div>
